@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "211800926566",
+    "project_id": "figma-4749d",
+    "storage_bucket": "figma-4749d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211800926566:android:fb27039c58f2934669c0a7",
+        "android_client_info": {
+          "package_name": "com.example.figma1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7zY2Gg43UXu_4smKMogYfy4L4x_nb86Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
