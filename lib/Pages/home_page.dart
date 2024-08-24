@@ -13,16 +13,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-int _selectedIndex = 0;
+  int _selectedIndex = 0;
 
-void _onItemTapped(int index) {
+  void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
       // You can handle navigation to different screens based on the index
       // For now, we are just updating the selected index
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -142,14 +141,18 @@ void _onItemTapped(int index) {
                   ),
                   Text("Sort", style: GoogleFonts.roboto(fontSize: 20)),
                   IconButton(
-                      onPressed: () {button(context);},
+                      onPressed: () {
+                        button(context);
+                      },
                       icon: Image.asset(
                         "assets/sort.png",
                         color: Colors.black,
                       )),
                   Text("Filter", style: GoogleFonts.roboto(fontSize: 20)),
                   IconButton(
-                      onPressed: () {button(context);},
+                      onPressed: () {
+                        button(context);
+                      },
                       icon: Image.asset(
                         "assets/f1.png",
                         color: Colors.black,
@@ -502,10 +505,12 @@ void _onItemTapped(int index) {
                         color: Colors.white,
                         elevation: 0,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),      
+                          borderRadius: BorderRadius.circular(10),
                         ),
                         child: GestureDetector(
-                          onTap: (){button(context);},
+                          onTap: () {
+                            button(context);
+                          },
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -549,7 +554,8 @@ void _onItemTapped(int index) {
                                             i <= product['rating']
                                                 ? Icons.star
                                                 : (i - product['rating'] < 1 &&
-                                                        i - product['rating'] > 0)
+                                                        i - product['rating'] >
+                                                            0)
                                                     ? Icons.star_half
                                                     : Icons.star_border,
                                             color: Colors.orange,
@@ -600,20 +606,17 @@ void _onItemTapped(int index) {
             icon: Icon(Icons.shopping_cart),
             label: 'cart',
           ),
-           BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(Icons.search_rounded),
             label: 'Search',
           ),
-           BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Settings',
           ),
-          
         ],
         type: BottomNavigationBarType.fixed,
       ),
-       
     );
-    
   }
 }
