@@ -142,14 +142,14 @@ void _onItemTapped(int index) {
                   ),
                   Text("Sort", style: GoogleFonts.roboto(fontSize: 20)),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {button(context);},
                       icon: Image.asset(
                         "assets/sort.png",
                         color: Colors.black,
                       )),
                   Text("Filter", style: GoogleFonts.roboto(fontSize: 20)),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {button(context);},
                       icon: Image.asset(
                         "assets/f1.png",
                         color: Colors.black,
