@@ -499,70 +499,74 @@ void _onItemTapped(int index) {
                           products[index].data() as Map<String, dynamic>;
 
                       return Card(
-                        elevation: 5,
+                        color: Colors.white,
+                        elevation: 0,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(10),      
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Expanded(
-                              child: Image.network(
-                                product['_imageUrl'] ?? '',
-                                fit: BoxFit.contain,
+                        child: GestureDetector(
+                          onTap: (){button(context);},
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: Image.network(
+                                  product['_imageUrl'] ?? '',
+                                  fit: BoxFit.contain,
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    product['name'] ?? 'Unknown',
-                                    style: GoogleFonts.roboto(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                  SizedBox(height: 4),
-                                  Text(
-                                    product['details'] ??
-                                        'No details available',
-                                    style: GoogleFonts.roboto(fontSize: 14),
-                                  ),
-                                  SizedBox(height: 4),
-                                  Text(
-                                    '\$${product['price'] ?? '0.00'}',
-                                    style: GoogleFonts.roboto(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                  SizedBox(height: 4),
-                                  Row(
-                                    children: [
-                                      for (var i = 1; i <= 5; i++)
-                                        Icon(
-                                          i <= product['rating']
-                                              ? Icons.star
-                                              : (i - product['rating'] < 1 &&
-                                                      i - product['rating'] > 0)
-                                                  ? Icons.star_half
-                                                  : Icons.star_border,
-                                          color: Colors.orange,
-                                          size: 16,
-                                        ),
-                                      SizedBox(width: 4),
-                                      Text(
-                                        '${product['rating'] ?? '0.0'}',
-                                        style: const TextStyle(fontSize: 14),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      product['name'] ?? 'Unknown',
+                                      style: GoogleFonts.roboto(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
                                       ),
-                                    ],
-                                  ),
-                                ],
+                                    ),
+                                    SizedBox(height: 4),
+                                    Text(
+                                      product['details'] ??
+                                          'No details available',
+                                      style: GoogleFonts.roboto(fontSize: 14),
+                                    ),
+                                    SizedBox(height: 4),
+                                    Text(
+                                      '\$${product['price'] ?? '0.00'}',
+                                      style: GoogleFonts.roboto(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                    SizedBox(height: 4),
+                                    Row(
+                                      children: [
+                                        for (var i = 1; i <= 5; i++)
+                                          Icon(
+                                            i <= product['rating']
+                                                ? Icons.star
+                                                : (i - product['rating'] < 1 &&
+                                                        i - product['rating'] > 0)
+                                                    ? Icons.star_half
+                                                    : Icons.star_border,
+                                            color: Colors.orange,
+                                            size: 16,
+                                          ),
+                                        SizedBox(width: 4),
+                                        Text(
+                                          '${product['rating'] ?? '0.0'}',
+                                          style: const TextStyle(fontSize: 14),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       );
                     },
@@ -573,6 +577,9 @@ void _onItemTapped(int index) {
           ]),
         ),
       ),
+
+      // Bottom Navigation Bar
+
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         elevation: 0,
